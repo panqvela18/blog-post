@@ -79,7 +79,7 @@ export default function Home() {
         <div className="w-[45%]">
           <div className="flex items-center justify-between ">
             <h3 className="text-black font-bold text-4xl mb-8">All Posts</h3>
-            <Link className="text-purle" href={"/"}>
+            <Link className="text-purle" href={"/blog"}>
               View All
             </Link>
           </div>
