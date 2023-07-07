@@ -5,7 +5,9 @@ import Image from "next/image";
 export default function Header() {
   return (
     <header className="h-20 w-screen bg-black flex items-center justify-between px-20">
-      <Image src={logo} width={140} height={28} alt="logo" />
+      <Link href={"/"}>
+        <Image src={logo} width={140} height={28} alt="logo" />
+      </Link>
       <nav>
         <Link className="text-[#fff]" href={"/"}>
           Home

@@ -24,7 +24,7 @@ export default function Footer() {
           <Link className="text-[#fff] ml-6" href={"/contact"}>
             Contact
           </Link>
-          <Link className="text-[#fff] ml-6" href={"/contact"}>
+          <Link className="text-[#fff] ml-6" href={"/privacy"}>
             Privacy Policy
           </Link>
         </nav>
