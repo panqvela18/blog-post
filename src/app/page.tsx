@@ -1,113 +1,275 @@
-import Image from 'next/image'
+"use client";
+
+import Button from "@component/components/Button";
+import home from "../images/home.png";
+import Image from "next/image";
+import Link from "next/link";
+import PostMinimalistic from "@component/components/PostMinimalistic";
+import CategoriesDetailed from "@component/components/CategoriesDetailed";
+import group from "../images/group.png";
+import Author from "@component/components/Author";
+import gela from "../images/gela.png";
+import gela2 from "../images/gela2.png";
+import gela3 from "../images/gela3.png";
+import gela4 from "../images/gela4.png";
+import feature from "../images/Featured in.png";
+import logoWrapper from "../images/Logo Wrapper.png";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import { useRef } from "react";
+import SwiperType from "swiper";
+import SwiperComents from "@component/components/SwiperComents";
+import profPic from "../images/Profile.svg";
+import { GrFormNextLink, GrFormPreviousLink } from "react-icons/gr";
+import JoinNow from "@component/components/JoinNow";
 
 export default function Home() {
+  const swiperRef = useRef<SwiperType>();
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
+    <main>
+      <section className="bg-[url('../images/man.png')] bg-no-repeat bg-cover h-[720px] w-full pt-32 pl-20 text-[#fff] bg-blend-multiply bg-[grey]">
+        <p className="text-base mb-6">
+          Posted on <span className="font-bold">Startup</span>
         </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+        <p
+          style={{
+            textShadow:
+              "-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000",
+          }}
+          className="font-bold text-6xl w-1/2 mb-6"
+        >
+          Step-by-step guide to choosing great font pairs
+        </p>
+        <p className="mb-4">
+          By<span className="text-yellow"> James West</span> | May 23, 2022
+        </p>
+        <p className="w-[40%] mb-12">
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+          dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident.
+        </p>
+        <Button text="Read More >" />
+      </section>
+      <section className="px-20 py-32 flex items-baseline justify-between mb-32 ">
+        <div className="w-[500px]">
+          <h3 className="mb-8 font-bold text-4xl">Featured Post</h3>
+          <Image
+            className="mb-8"
+            src={home}
+            width={500}
+            height={770}
+            alt="home"
+          />
+          <p className="font-500 text-dark_grey mb-4">
+            By <span className="text-purle">John Doe</span> l May 23, 2022
+          </p>
+          <h4 className="mb-4 font-bold text-3xl text-black w-[500px]">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor.
+          </h4>
+          <p className="mb-8 text-medium_grey w-[500px]">
+            Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+            cupidatat non proident.
+          </p>
+          <Button text="Read More >" />
         </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
+        <div className="w-[45%]">
+          <div className="flex items-center justify-between ">
+            <h3 className="text-black font-bold text-4xl mb-8">All Posts</h3>
+            <Link className="text-purle" href={"/"}>
+              View All
+            </Link>
+          </div>
+          <PostMinimalistic
+            title="8 Figma design systems that you can download for free today."
+            author="John Doe"
+            date="Aug 23, 2021 "
+          />
+          <PostMinimalistic
+            title="8 Figma design systems that you can download for free today."
+            author="John Doe"
+            date="Aug 23, 2021 "
+          />
+          <PostMinimalistic
+            title="8 Figma design systems that you can download for free today."
+            author="John Doe"
+            date="Aug 23, 2021 "
+          />
+          <PostMinimalistic
+            title="8 Figma design systems that you can download for free today."
+            author="John Doe"
+            date="Aug 23, 2021 "
+          />
+        </div>
+      </section>
+      <section className="px-20 mb-32">
+        <div className="mb-32">
+          <div className="flex">
+            <div className="h-6 w-1/5 bg-[#fff]"></div>
+            <div className="h-6 w-3/5 bg-yellow"></div>
+            <div className="h-6 w-1/5 bg-purle"></div>
+          </div>
+          <div className="bg-lavender py-24 px-20 flex items-baseline justify-between">
+            <div className="w-[40%]">
+              <h5 className="text-black font-semibold mb-6">ABOUT US</h5>
+              <h3 className="text-black font-bold text-4xl mb-4">
+                We are a community of content writers who share their learnings
+              </h3>
+              <p className="text-medium_grey mb-4">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+              <Link href={"/about"} className="text-purle font-bold text-lg">
+                {"Read More >"}
+              </Link>
+            </div>
+            <div className="w-[40%]">
+              <h5 className="text-black font-semibold mb-6">Our mision</h5>
+              <h3 className="text-black font-bold text-3xl mb-4">
+                Creating valuable content for creatives all around the world
+              </h3>
+              <p className="text-medium_grey mb-4">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h2 className="text-black font-bold text-4xl text-center mb-12">
+            Choose A Catagory
           </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+          <CategoriesDetailed />
+        </div>
+      </section>
+      <section className="px-20 mb-24">
+        <div className="flex items-end relative mb-32 ">
+          <Image
+            src={group}
+            width={0}
+            alt="group"
+            height={0}
+            sizes="100vw"
+            style={{ width: "70%", height: "auto" }}
+          />
+          <div className="p-20 bg-[#fff] w-1/2 ml-[50%] h-2/3 absolute ">
+            <h4 className="font-semibold mb-6">Why we started</h4>
+            <h3 className="text-black font-bold text-4xl mb-4 ">
+              It started out as a simple idea and evolved into our passion
+            </h3>
+            <p className="text-medium_grey mb-8">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip.
+            </p>
+            <Button text="Discover our story >" />
+          </div>
+        </div>
+        <div>
+          <h3 className="font-bold text-3xl text-black text-center mb-12">
+            List of Authors
+          </h3>
+          <div className="flex items-center justify-between mb-24">
+            <Author
+              name="Floyd Miles"
+              position="Content Writer @Company"
+              image={gela}
+            />
+            <Author
+              name="Dianne Russell"
+              position="Content Writer @Company"
+              image={gela2}
+            />
+            <Author
+              name="Jenny Wilson"
+              position="Content Writer @Company"
+              image={gela3}
+            />
+            <Author
+              name="Leslie Alexander"
+              position="Content Writer @Company"
+              image={gela4}
+            />
+          </div>
+          <div className="flex items-center justify-between">
+            <Image src={feature} alt="feature" />
+            <Image src={logoWrapper} alt="logoWrapper" />
+          </div>
+        </div>
+      </section>
+      <section className="px-20">
+        <div className="py-20 px-28 bg-light_yellow flex items-start justify-between ">
+          <div className="w-[350px]">
+            <p className="text-black font-semibold mb-3">TESTIMONIALS</p>
+            <h4 className="font-bold text-4xl mb-4">
+              What people say about our blog
+            </h4>
+            <p className="text-black">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor.
+            </p>
+          </div>
+          <div className="w-[1px] h-[200px] border border-[#6D6E76]"></div>
+          <div className="w-2/5">
+            <Swiper
+              onSwiper={(swiper) => {
+                swiperRef.current = swiper;
+              }}
+              modules={[]}
+              loop={true}
+              autoplay={{ delay: 1000 }}
+              spaceBetween={50}
+              slidesPerView={1}
+            >
+              <SwiperSlide>
+                <SwiperComents
+                  image={profPic}
+                  description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                  location="New york"
+                  comentAuthor="Jonathan Vallem"
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <SwiperComents
+                  image={gela}
+                  description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                  location="New york"
+                  comentAuthor="Jonathan Vallem"
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <SwiperComents
+                  image={gela2}
+                  description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                  location="New york"
+                  comentAuthor="Jonathan Vallem"
+                />
+              </SwiperSlide>
+            </Swiper>
+            <div className="flex items-center justify-between">
+              <button
+                className="p-4 bg-yellow rounded-full"
+                onClick={() => swiperRef.current?.slidePrev()}
+              >
+                <GrFormPreviousLink />
+              </button>
+              <button
+                className="p-4 bg-yellow rounded-full"
+                onClick={() => swiperRef.current?.slideNext()}
+              >
+                <GrFormNextLink />
+              </button>
+            </div>
+          </div>
+        </div>
+        <JoinNow />
+      </section>
     </main>
-  )
+  );
 }
